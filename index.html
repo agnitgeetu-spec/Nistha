@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>a question for you</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stage">
+  <div class="eyebrow">just one question</div>
+  <h1>Do you <em>love</em> me?</h1>
+  <p class="lede">Take your time. Well, actually — there's only one honest answer here. 💕</p>
+
+  <div class="choice-row">
+    <a href="good-girl.html" class="btn btn-yes" id="yesBtn">Yes, of course 💗</a>
+    <button class="btn btn-no" id="noBtn">No</button>
+  </div>
+  <div class="no-caption" id="caption"></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  spawnBlobs();
+  spawnHearts(20);
+  initMusic();
+  makeRunaway(document.getElementById('noBtn'), document.getElementById('caption'));
+</script>
+</body>
+</html>

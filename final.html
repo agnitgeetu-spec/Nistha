@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>one last question</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stage" id="askStage">
+  <div class="eyebrow">last question, i promise</div>
+  <h1>Will you ever <em>leave</em> me?</h1>
+  <p class="lede">Choose carefully. (One of these buttons doesn't want to be chosen.)</p>
+
+  <div class="choice-row">
+    <button class="btn btn-yes" id="noLeaveBtn">No, never 💗</button>
+    <button class="btn btn-no" id="yesLeaveBtn">Yes</button>
+  </div>
+  <div class="no-caption" id="caption"></div>
+</div>
+
+<div class="stage" id="finalStage" style="display:none;">
+  <div class="burst">♾️🥰</div>
+  <div class="eyebrow">promise kept</div>
+  <h1>Good. I'm <em>never</em> letting you go.</h1>
+  <p class="lede">Forever and always, this is my favorite place to be — right next to you.</p>
+</div>
+
+<script src="script.js"></script>
+<script>
+  spawnBlobs();
+  spawnHearts(20);
+  initMusic();
+  makeRunaway(document.getElementById('yesLeaveBtn'), document.getElementById('caption'));
+
+  document.getElementById('noLeaveBtn').addEventListener('click', () => {
+    document.getElementById('askStage').style.display = 'none';
+    document.getElementById('finalStage').style.display = 'block';
+  });
+</script>
+</body>
+</html>
